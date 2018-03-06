@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+function del(arr)
+{
+	var a=[];
+	for(var i=0;i<arr.length;i++)
+	{
+		var flag=true;
+		for(var j=0;j<a.length;j++)
+		{
+			if(arr[i]==a[j])
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag)
+		{
+			a.push(arr[i]);
+		}
+	}
+	return a;
+}
+
+//方法2
+function del_2(arr)
+{
+	var a=[];
+	var hash={};
+	for(var i=0;i<arr.length;i++)
+	{
+		if(!hash[arr[i]])
+		{
+			hash[arr[i]]=true;
+			a.push(arr[i]);
+		}
+	}
+	return a;
+}
+
+
+var w = "aaabbccdded";
+var arr = w.split("");
+var d = del_2(arr);
+alert(d);
+
+</script>
+</body>
+</html>

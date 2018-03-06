@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <span class="time">60</span>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+  	var seconds = 60
+	timer = setInterval(function(){
+		seconds--;
+		if(seconds == 0){
+		  clearInterval(timer);
+	    }
+		$('.time').html(seconds);
+	}
+	,1000);
+
+  </script>
+</body>
+</html>
